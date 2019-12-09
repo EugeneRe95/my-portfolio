@@ -15,7 +15,6 @@ import project_6 from '../img/project_6.PNG';
 import project_7 from '../img/project_7.PNG';
 import project_8 from '../img/project_8.PNG';
 
-
 export class MainSlider extends Component {
     constructor(props){
         super(props)
@@ -85,10 +84,6 @@ export class MainSlider extends Component {
                 duration: 3000,
                 delay: (el, i) => 80 * i
             });
-
-        // fetch('../portfolio_items.json')
-        //     .then(response => response.json())
-        //     .then(items => this.setState({ projects: items }))
     }
     render() {
         return (

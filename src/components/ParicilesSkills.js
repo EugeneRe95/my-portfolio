@@ -1,5 +1,15 @@
 import React, { Component } from 'react';
 import Particles from 'react-particles-js';
+import iconAjax from '../img/icons/ajax.png';
+import iconBabel from '../img/icons/babel.png';
+import iconCss from '../img/icons/css.png';
+import iconGithub from '../img/icons/github.png';
+import iconHtml from '../img/icons/html.png';
+import iconJs from '../img/icons/js.png';
+import iconNpm from '../img/icons/npm.png';
+import iconReact from '../img/icons/react.png';
+import iconSass from '../img/icons/sass.png';
+import iconWebpack from '../img/icons/Webpack.png';
 
 export class ParicilesSkills extends Component {
     render() {
@@ -27,54 +37,54 @@ export class ParicilesSkills extends Component {
                             ],
                             "images": [
                                 {
-                                    "src": "img/icons/css.png",
+                                    "src": iconAjax,
                                     "height": 70,
                                     "width": 70,
                                 },
                                 {
-                                    "src": "img/icons/html.png",
+                                    "src": iconBabel,
                                     "height": 70,
                                     "width": 70,
                                 },
                                 {
-                                    "src": "img/icons/js.png",
+                                    "src": iconCss,
                                     "height": 70,
                                     "width": 70,
                                 },
                                 {
-                                    "src": "img/icons/react.png",
+                                    "src": iconGithub,
                                     "height": 70,
                                     "width": 70,
                                 },
                                 {
-                                    "src": "img/icons/github.png",
+                                    "src": iconHtml,
                                     "height": 70,
                                     "width": 70,
                                 },
                                 {
-                                    "src": "img/icons/sass.png",
+                                    "src": iconJs,
                                     "height": 70,
                                     "width": 70,
                                 },
                                 {
-                                    "src": "img/icons/webpack.png",
-                                    "height": 100,
-                                    "width": 100,
+                                    "src": iconNpm,
+                                    "height": 70,
+                                    "width": 70,
                                 },
                                 {
-                                    "src": "img/icons/babel.png",
-                                    "height": 100,
-                                    "width": 100,
+                                    "src": iconSass,
+                                    "height": 70,
+                                    "width": 70,
                                 },
                                 {
-                                    "src": "img/icons/npm.png",
-                                    "height": 100,
-                                    "width": 100,
+                                    "src": iconReact,
+                                    "height": 70,
+                                    "width": 70,
                                 },
                                 {
-                                    "src": "img/icons/ajax.png",
-                                    "height": 60,
-                                    "width": 100,
+                                    "src": iconWebpack,
+                                    "height": 70,
+                                    "width": 70,
                                 }
                             ]
                         },

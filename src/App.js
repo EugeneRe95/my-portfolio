@@ -48,7 +48,7 @@ export class App extends React.Component {
       <React.Fragment>
         <div id="sidebar">
           <Hamburger close={this.state.close} toggleMenu={this.toggleMenu} />
-          <div id="contacts"><Contacts id="phone" icon="fas fa-phone-square-alt" text="+38(067)-465-59-56" /><Contacts id="mail" icon="fas fa-envelope-square" text="revytskiy.evgen@gmail.com" /><a href="https://drive.google.com/open?id=1fx18K7Jv-AvT3NChYhggxaT7Ya7evVbY" target="_blank" rel="noopener noreferrer"><Contacts id="cv" icon="fa fa-file" text="Click to open my CV" /><i class="" aria-hidden="true"></i></a></div>
+          <div id="contacts"><Contacts id="phone" icon="fas fa-phone-square-alt" text="+38(067)-465-59-56" /><Contacts id="mail" icon="fas fa-envelope-square" text="revytskiy.evgen@gmail.com" /><a href="https://drive.google.com/open?id=1fx18K7Jv-AvT3NChYhggxaT7Ya7evVbY" target="_blank" rel="noopener noreferrer"><Contacts id="cv" icon="fa fa-file" text="Click to open my CV" /></a></div>
           <div id="socialmedia-icons"><SocialmediaIcons /></div>
         </div>
         <div id="main-carousel">
