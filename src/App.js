@@ -1,26 +1,64 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import MainSlider from './components/MainSlider';
+import Hamburger from './components/Hamburger';
+import Menu from './components/Menu';
+import SocialmediaIcons from './components/SocialmediaIcons';
+import Contacts from './components/Contacts'
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export class App extends React.Component {
+  constructor(props) {
+    super(props)
+    this.toggleMenu = this.toggleMenu.bind(this)
+    this.hideMenu = this.hideMenu.bind(this)
+    this.state = { shown: false, close: '', anim: '', zIndex: '-1', menuAnim: 'slideOutUp', menuOpacity: 0, animatedText: true }
+  }
+
+  toggleMenu() {
+    if (this.state.shown) {
+      this.setState({ shown: false, close: '', zIndex: '-1', menuAnim: 'slideOutUp', menuOpacity: 1, });
+      document.querySelector('.awssld').classList.remove('rotated');
+    } else {
+      this.setState({ shown: true, close: ' close', zIndex: '2', menuAnim: 'slideInUp', menuOpacity: 1, });
+      document.querySelector('.awssld').classList.add('rotated');
+    }
+  }
+  hideMenu(event) {
+    const e = event.target;
+    if (e.closest('button')) {
+      switch (e.getAttribute('data-page')) {
+        case 'main':
+          document.querySelector('.awssld__bullets button:nth-child(1)').click();
+          break;
+        case 'skills':
+          document.querySelector('.awssld__bullets button:nth-child(2)').click();
+          break;
+        case 'portfolio':
+          document.querySelector('.awssld__bullets button:nth-child(3)').click();
+          break;
+        default: console.log('hi')
+          break;
+      }
+      this.toggleMenu();
+    }
+  }
+  render() {
+    return (
+      <React.Fragment>
+        <div id="sidebar">
+          <Hamburger close={this.state.close} toggleMenu={this.toggleMenu} />
+          <div id="contacts"><Contacts id="phone" icon="fas fa-phone-square-alt" text="+38(067)-465-59-56" /><Contacts id="mail" icon="fas fa-envelope-square" text="revytskiy.evgen@gmail.com" /><a href="https://drive.google.com/open?id=1fx18K7Jv-AvT3NChYhggxaT7Ya7evVbY" target="_blank" rel="noopener noreferrer"><Contacts id="cv" icon="fa fa-file" text="Click to open my CV" /><i class="" aria-hidden="true"></i></a></div>
+          <div id="socialmedia-icons"><SocialmediaIcons /></div>
+        </div>
+        <div id="main-carousel">
+          <MainSlider />
+        </div>
+        <div id="menu-mobile" style={{ zIndex: this.state.zIndex }}>
+          <Menu hideMenu={this.hideMenu} menuAnim={this.state.menuAnim} opacity={this.state.menuOpacity} />
+        </div>
+      </React.Fragment>
+    );
+  }
 }
-
 export default App;
