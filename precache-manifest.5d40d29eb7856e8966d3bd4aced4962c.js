@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "0e4509b5dc2031face4af9333889d696",
+    "revision": "0084979e94c28d618c42cc14ff437fac",
     "url": "/my-portfolio/index.html"
   },
   {
-    "revision": "e22cdcec3d33b40cfa33",
+    "revision": "20f61f18f34c930e1022",
     "url": "/my-portfolio/static/css/2.e79aac32.chunk.css"
   },
   {
-    "revision": "b46c77defe283a0ed029",
-    "url": "/my-portfolio/static/css/main.8d2c4c73.chunk.css"
+    "revision": "cd3d90281d4762c999e0",
+    "url": "/my-portfolio/static/css/main.f791d4cc.chunk.css"
   },
   {
-    "revision": "e22cdcec3d33b40cfa33",
-    "url": "/my-portfolio/static/js/2.0d5d0aac.chunk.js"
+    "revision": "20f61f18f34c930e1022",
+    "url": "/my-portfolio/static/js/2.57d01631.chunk.js"
   },
   {
-    "revision": "b46c77defe283a0ed029",
-    "url": "/my-portfolio/static/js/main.d801d0a7.chunk.js"
+    "revision": "cd3d90281d4762c999e0",
+    "url": "/my-portfolio/static/js/main.bb78fcf3.chunk.js"
   },
   {
     "revision": "6d74f74fdfeef443f75b",
@@ -50,10 +50,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
     "revision": "e0cc0801844dee4565ba5610244d98c3",
     "url": "/my-portfolio/static/media/js.e0cc0801.png"
-  },
-  {
-    "revision": "81ef348226632fb1061d22d4e6fd3479",
-    "url": "/my-portfolio/static/media/main.81ef3482.jpg"
   },
   {
     "revision": "5d38192bbedb977541d4c2ee3805cae3",
@@ -92,19 +88,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/my-portfolio/static/media/project_8.b33d727f.PNG"
   },
   {
-    "revision": "b98c376fd8a25c4a4470a4cea7dc1417",
-    "url": "/my-portfolio/static/media/projects-bg.b98c376f.jpg"
-  },
-  {
     "revision": "a1766471e07bbdf2d665e2f49caa5ebd",
     "url": "/my-portfolio/static/media/react.a1766471.png"
   },
   {
     "revision": "eac0fdba26c36d995b451da52e901668",
     "url": "/my-portfolio/static/media/sass.eac0fdba.png"
-  },
-  {
-    "revision": "30561e1c19f3ef76ee5b83ae95993141",
-    "url": "/my-portfolio/static/media/skills.30561e1c.jpg"
   }
 ]);
