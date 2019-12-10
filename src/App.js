@@ -1,5 +1,6 @@
 import React from 'react';
 import './App.css';
+import './animate.min.css'
 import MainSlider from './components/MainSlider';
 import Hamburger from './components/Hamburger';
 import Menu from './components/Menu';
