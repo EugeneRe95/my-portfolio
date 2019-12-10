@@ -2,21 +2,27 @@ import React, { Component } from 'react';
 import Particles from 'react-particles-js';
 
 export class MainParticles extends Component {
+    constructor(props){
+        super(props)
+        this.state={number: ''}
+    }
+    componentDidMount(){
+        let widthWindow=window.innerWidth;
+        this.setState({number: widthWindow/10});
+        console.log(widthWindow)
+    }
     render() {
         return (
             <Particles params={{
                 "particles": {
                     "number": {
-                        "value": 100
+                        "value": this.state.number
                     },
                     "size": {
                         "value": 3
                     },
                     "color":{
                         "value": "#f76f00"
-                    },
-                    "move":{
-                        "direction": "bottom"
                     }
                 },
                 "interactivity": {
