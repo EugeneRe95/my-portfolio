@@ -6,7 +6,7 @@ let icons = [{ class: "fab fa-facebook-square", link: "https://www.facebook.com/
 export class SocialmediaIcons extends Component {
     render() {
         return (icons.map((icon, index) => (
-                <p style={{ marginBottom: '10px', animationDelay: index*500+'ms' }} key ={index} className="animated bounceInUp"><a href={icon.link} target="_blank" rel="noopener noreferrer"><i className={icon.class}></i></a></p>
+                <p style={{ marginBottom: '10px'}} key ={index} className="animated fadeInLeft"><a href={icon.link} target="_blank" rel="noopener noreferrer"><i className={icon.class}></i></a></p>
         )))
     }
 }

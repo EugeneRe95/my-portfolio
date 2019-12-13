@@ -7,7 +7,7 @@ export class Menu extends Component {
                 <ul onClick={this.props.hideMenu}>
                     <li><button data-page="main">Main</button ></li>
                     <li><button data-page="skills">About</button ></li>
-                    <li><button data-page="portfolio">My portfolio</button ></li>
+                    <li><button data-page="portfolio">My projects</button ></li>
                 </ul>
             </div>
         )
