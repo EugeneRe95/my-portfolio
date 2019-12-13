@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/my-portfolio/static/css/main.f791d4cc.chunk.css",
-    "main.js": "/my-portfolio/static/js/main.d0c3b2af.chunk.js",
-    "main.js.map": "/my-portfolio/static/js/main.d0c3b2af.chunk.js.map",
+    "main.css": "/my-portfolio/static/css/main.c897d0f6.chunk.css",
+    "main.js": "/my-portfolio/static/js/main.bbdb8965.chunk.js",
+    "main.js.map": "/my-portfolio/static/js/main.bbdb8965.chunk.js.map",
     "runtime-main.js": "/my-portfolio/static/js/runtime-main.35aeb8f6.js",
     "runtime-main.js.map": "/my-portfolio/static/js/runtime-main.35aeb8f6.js.map",
     "static/css/2.e79aac32.chunk.css": "/my-portfolio/static/css/2.e79aac32.chunk.css",
     "static/js/2.57d01631.chunk.js": "/my-portfolio/static/js/2.57d01631.chunk.js",
     "static/js/2.57d01631.chunk.js.map": "/my-portfolio/static/js/2.57d01631.chunk.js.map",
     "index.html": "/my-portfolio/index.html",
-    "precache-manifest.710870281ded62c41d5c07bf41decb2c.js": "/my-portfolio/precache-manifest.710870281ded62c41d5c07bf41decb2c.js",
+    "precache-manifest.f6f8dea91fa0432b0faecb239a6d8578.js": "/my-portfolio/precache-manifest.f6f8dea91fa0432b0faecb239a6d8578.js",
     "service-worker.js": "/my-portfolio/service-worker.js",
     "static/css/2.e79aac32.chunk.css.map": "/my-portfolio/static/css/2.e79aac32.chunk.css.map",
-    "static/css/main.f791d4cc.chunk.css.map": "/my-portfolio/static/css/main.f791d4cc.chunk.css.map",
+    "static/css/main.c897d0f6.chunk.css.map": "/my-portfolio/static/css/main.c897d0f6.chunk.css.map",
     "static/media/Webpack.png": "/my-portfolio/static/media/Webpack.4591ad98.png",
     "static/media/ajax.png": "/my-portfolio/static/media/ajax.8a2ee7d4.png",
     "static/media/babel.png": "/my-portfolio/static/media/babel.2b98881d.png",
@@ -36,7 +36,7 @@
     "static/js/runtime-main.35aeb8f6.js",
     "static/css/2.e79aac32.chunk.css",
     "static/js/2.57d01631.chunk.js",
-    "static/css/main.f791d4cc.chunk.css",
-    "static/js/main.d0c3b2af.chunk.js"
+    "static/css/main.c897d0f6.chunk.css",
+    "static/js/main.bbdb8965.chunk.js"
   ]
 }
