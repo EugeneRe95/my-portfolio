@@ -18,7 +18,7 @@ export class ParicilesSkills extends Component {
                 params={{
                     "particles": {
                         "number": {
-                            "value": 10,
+                            "value": 8,
                             "density": {
                                 "enable": true,
                                 "value_area": 500
@@ -28,7 +28,7 @@ export class ParicilesSkills extends Component {
                             "enable": false
                         },
                         "move": {
-                            "speed": 3,
+                            "speed": 2,
                             "out_mode": "out",
                             "direction": "bottom"
                         },

@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 // import ImageContentHover from 'react-image-hover';
+import '@fortawesome/fontawesome-free/css/all.css';
 
 export class ProjectItem extends Component {
     constructor(props) {

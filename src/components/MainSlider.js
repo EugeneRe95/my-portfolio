@@ -93,7 +93,7 @@ export class MainSlider extends Component {
         return (
             <AwesomeSlider cssModule={AwesomeSliderStyles} bullets={true} fillParent={true} organicArrows={true}>
                 <div id="main"><MainParticles /> <div className="heading"><h1 className="animated fadeInLeftBig">Eugene <span style={{ color: 'rgb(247, 111, 0)' }}>Revutskiy </span></h1><p>Junior Front-end developer</p></div></div>
-                <div id="skills"><ParicilesSkills /><Skills /></div>
+                <div id="skills">{(window.innerWidth > 800) ? <React.Fragment><ParicilesSkills /><Skills /></React.Fragment> : <Skills />}</div>
                 <div id="portfolio">
                     <h1 style={{ marginTop: "40px", fontSize: "40px", textShadow: "10px 10px 25px #000" }}>My Projects</h1>
                     <div className="portfolio-container">
