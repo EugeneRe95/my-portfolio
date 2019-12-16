@@ -42,7 +42,7 @@ export class App extends React.Component {
           break;
       }
       this.toggleMenu();
-    }
+    } 
   }
   render() {
     return (

@@ -9,7 +9,7 @@ export class Skills extends Component {
                 <div className="about">
                     <div className="about-container">
                         <div className="about-me"><div className="photo"></div><p>{description.split(' ').map((word, index) => {
-                            return <span className="animated flipInX" style={{ animationDelay: index * 60 + 'ms' }}>{word}&nbsp;</span>
+                            return <span key={index} className="animated flipInX" style={{ animationDelay: index * 60 + 'ms' }}>{word}&nbsp;</span>
                         })}</p></div>
                         <div className="skills-list-items">
                             <h1>My Skills</h1>

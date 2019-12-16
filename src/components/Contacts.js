@@ -19,7 +19,7 @@ export class Contacts extends Component {
         return (
             <React.Fragment>
                 <div className="animated fadeInLeft" id={this.props.id} onMouseEnter={this.showTooltip} onMouseLeave={this.hideTooltip}><i className={this.props.icon}></i></div>
-                <ToolTip active={this.state.isTooltipActive} tooltipTimeout={3000} position="right" arrow="center" parent={"#"+this.props.id}><p>{this.props.text}</p></ToolTip>
+                <ToolTip active={this.state.isTooltipActive} tooltipTimeout={0} position="right" arrow="center" parent={"#"+this.props.id}><p>{this.props.text}</p></ToolTip>
             </React.Fragment>
         )
     }

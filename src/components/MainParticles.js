@@ -9,7 +9,6 @@ export class MainParticles extends Component {
     componentDidMount(){
         let widthWindow=window.innerWidth;
         this.setState({number: widthWindow/10});
-        console.log(widthWindow)
     }
     render() {
         return (
