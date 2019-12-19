@@ -5,7 +5,8 @@ import MainSlider from './components/MainSlider';
 import Hamburger from './components/Hamburger';
 import Menu from './components/Menu';
 import SocialmediaIcons from './components/SocialmediaIcons';
-import Contacts from './components/Contacts'
+import Contacts from './components/Contacts';
+
 
 
 export class App extends React.Component {

@@ -18,6 +18,7 @@ import project_7 from '../img/project_7.PNG';
 import project_8 from '../img/project_8.PNG';
 
 
+
 export class MainSlider extends Component {
     constructor(props) {
         super(props)
@@ -91,19 +92,21 @@ export class MainSlider extends Component {
     }
     render() {
         return (
-            <AwesomeSlider cssModule={AwesomeSliderStyles} bullets={true} fillParent={true} organicArrows={true}>
-                <div id="main"><MainParticles /> <div className="heading"><h1 className="animated fadeInLeftBig">Eugene <span style={{ color: 'rgb(247, 111, 0)' }}>Revutskiy </span></h1><p>Junior Front-end developer</p></div></div>
-                <div id="skills">{(window.innerWidth > 800) ? <React.Fragment><ParicilesSkills /><Skills /></React.Fragment> : <Skills />}</div>
-                <div id="portfolio">
-                    <h1 style={{ marginTop: "40px", fontSize: "40px", textShadow: "10px 10px 25px #000" }}>My Projects</h1>
-                    <div className="portfolio-container">
-                        {
-                            this.state.items.map((item, index) => {
-                                return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 300} />
-                            })
-                        }</div>
-                </div>
-            </AwesomeSlider>
+                    <AwesomeSlider cssModule={AwesomeSliderStyles} bullets={true} fillParent={true} organicArrows={true}>
+                        <div id="main"><MainParticles /><div className="heading"><h1 className="animated fadeInLeftBig">Eugene <span style={{ color: 'rgb(247, 111, 0)' }}>Revutskiy </span></h1><p>Junior Front-end developer</p></div></div>
+                        <div id="skills">{(window.innerWidth > 800) ? <React.Fragment><ParicilesSkills /><Skills /></React.Fragment> : <Skills />}</div>
+
+                        <div id="portfolio">
+                            <h1 style={{ marginTop: "40px", fontSize: "40px", textShadow: "10px 10px 25px #000" }}>My Projects</h1>
+                            <div className="portfolio-container">
+                                {
+                                    this.state.items.map((item, index) => {
+                                        return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 300} />
+                                    })
+                                }</div>
+                        </div>
+                    </AwesomeSlider>
+
         )
     }
 }
