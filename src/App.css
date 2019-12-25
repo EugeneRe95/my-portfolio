@@ -165,7 +165,6 @@ a{
   }
 
   #main{
-    /* background: url('./img/main.jpg') no-repeat center center /cover; */
     background: rgb(0,0,0);
     background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(1,156,187,1) 100%);
     color: #fff;
@@ -179,8 +178,8 @@ a{
   #main p{
     font-size: 30px;
   }
-  #main .main-description span{
-    font-size: 20px;
+  #main p span{
+    display: inline-block;
   }
   #skills{
     background: rgb(0,0,0);

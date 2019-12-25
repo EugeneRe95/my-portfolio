@@ -3,7 +3,6 @@ import AwesomeSlider from 'react-awesome-slider';
 import AwesomeSliderStyles from 'react-awesome-slider/src/styled/fall-animation';
 // import AwesomeSliderStyles from 'react-awesome-slider/src/styled/cube-animation';
 // import AwesomeSliderStyles from 'react-awesome-slider/src/styled/fold-out-animation';
-import anime from 'animejs/lib/anime.es.js';
 import ParicilesSkills from './ParicilesSkills';
 import Skills from './Skills';
 import MainParticles from "./MainParticles";
@@ -16,14 +15,21 @@ import project_5 from '../img/project_5.PNG';
 import project_6 from '../img/project_6.PNG';
 import project_7 from '../img/project_7.PNG';
 import project_8 from '../img/project_8.PNG';
+import project_9 from '../img/project_9.PNG';
 
-
+let position = 'Junior Front-end developer';
 
 export class MainSlider extends Component {
     constructor(props) {
         super(props)
         this.state = {
             items: [
+                {
+                    path: project_9,
+                    linkProject: "https://eugenere95.github.io/trumba-trans/",
+                    linkGithub: "https://github.com/EugeneRe95/trumba-trans",
+                    name: "Logistic website"
+                },
                 {
                     path: project_1,
                     linkProject: "https://eugenere95.github.io/weight_converter/",
@@ -76,36 +82,28 @@ export class MainSlider extends Component {
         }
     }
 
-    componentDidMount() {
-        var textWrapper = document.querySelectorAll('.heading p');
-        textWrapper.forEach((wrap) => {
-            wrap.innerHTML = wrap.textContent.replace(/\S/g, "<span class='letter'>$&</span>")
-        });
-
-        anime.timeline({ loop: false })
-            .add({
-                targets: '.heading p .letter',
-                rotateY: [-90, 0],
-                duration: 3000,
-                delay: (el, i) => 80 * i
-            });
-    }
     render() {
         return (
-                    <AwesomeSlider cssModule={AwesomeSliderStyles} bullets={true} fillParent={true} organicArrows={true}>
-                        <div id="main"><MainParticles /><div className="heading"><h1 className="animated fadeInLeftBig">Eugene <span style={{ color: 'rgb(247, 111, 0)' }}>Revutskiy </span></h1><p>Junior Front-end developer</p></div></div>
-                        <div id="skills">{(window.innerWidth > 800) ? <React.Fragment><ParicilesSkills /><Skills /></React.Fragment> : <Skills />}</div>
+            <AwesomeSlider cssModule={AwesomeSliderStyles} bullets={true} fillParent={true} organicArrows={true}>
+                <div id="main"><MainParticles /><div className="heading"><h1 className="animated fadeInLeftBig">Eugene <span style={{ color: 'rgb(247, 111, 0)' }}>Revutskiy </span></h1><p>{position.split('').map((word, index) => {
+                    if (word === ' ') {
+                        return <span key={index} className="animated rollIn" style={{ animationDelay: index * 60 + 'ms' }}>&nbsp;</span>
+                    } else {
+                        return <span key={index} className="animated rollIn" style={{ animationDelay: index * 60 + 'ms' }}>{word}</span>
+                    }
+                })}</p></div></div>
+                <div id="skills">{(window.innerWidth > 800) ? <React.Fragment><ParicilesSkills /><Skills /></React.Fragment> : <Skills />}</div>
 
-                        <div id="portfolio">
-                            <h1 style={{ marginTop: "40px", fontSize: "40px", textShadow: "10px 10px 25px #000" }}>My Projects</h1>
-                            <div className="portfolio-container">
-                                {
-                                    this.state.items.map((item, index) => {
-                                        return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 300} />
-                                    })
-                                }</div>
-                        </div>
-                    </AwesomeSlider>
+                <div id="portfolio">
+                    <h1 style={{ marginTop: "40px", fontSize: "40px", textShadow: "10px 10px 25px #000" }}>My Projects</h1>
+                    <div className="portfolio-container">
+                        {
+                            this.state.items.map((item, index) => {
+                                return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 300} />
+                            })
+                        }</div>
+                </div>
+            </AwesomeSlider>
 
         )
     }
