@@ -16,6 +16,7 @@ import project_6 from '../img/project_6.PNG';
 import project_7 from '../img/project_7.PNG';
 import project_8 from '../img/project_8.PNG';
 import project_9 from '../img/project_9.PNG';
+import project_10 from '../img/project_10.PNG';
 
 let position = 'Junior Front-end developer';
 
@@ -29,6 +30,12 @@ export class MainSlider extends Component {
                     linkProject: "https://eugenere95.github.io/trumba-trans/",
                     linkGithub: "https://github.com/EugeneRe95/trumba-trans",
                     name: "Logistic website"
+                },
+                {
+                    path: project_10,
+                    linkProject: "https://eugenere95.github.io/lerestaurante/",
+                    linkGithub: "https://github.com/EugeneRe95/lerestaurante",
+                    name: "Restaurant website"
                 },
                 {
                     path: project_1,
