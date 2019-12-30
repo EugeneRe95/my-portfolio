@@ -29,66 +29,85 @@ export class MainSlider extends Component {
                     path: project_9,
                     linkProject: "https://eugenere95.github.io/trumba-trans/",
                     linkGithub: "https://github.com/EugeneRe95/trumba-trans",
-                    name: "Logistic website"
+                    name: "Logistic website",
+                    type: 'React'
                 },
                 {
                     path: project_10,
                     linkProject: "https://eugenere95.github.io/lerestaurante/",
                     linkGithub: "https://github.com/EugeneRe95/lerestaurante",
-                    name: "Restaurant website"
+                    name: "Restaurant website",
+                    type: 'React'
                 },
                 {
                     path: project_1,
                     linkProject: "https://eugenere95.github.io/weight_converter/",
                     linkGithub: "https://github.com/EugeneRe95/weight_converter",
-                    name: "Weight converter"
+                    name: "Weight converter",
+                    type: 'JavaScript'
                 },
                 {
                     path: project_2,
                     linkProject: "https://eugenere95.github.io/rps_game/",
                     linkGithub: "https://github.com/EugeneRe95/rps_game",
-                    name: "Rock Paper Scissors Game"
+                    name: "Rock Paper Scissors Game",
+                    type: 'JavaScript'
                 },
                 {
                     path: project_3,
                     linkProject: "https://eugenere95.github.io/fullscreen_slider/",
                     linkGithub: "https://github.com/EugeneRe95/fullscreen_slider",
-                    name: "Fullscreen Slider"
+                    name: "Fullscreen Slider",
+                    type: 'JavaScript'
                 },
                 {
                     path: project_4,
                     linkProject: "https://eugenere95.github.io/fancy_form/",
                     linkGithub: "https://github.com/EugeneRe95/fancy_form",
-                    name: "Fancy Form"
+                    name: "Fancy Form",
+                    type: 'JavaScript'
                 },
                 {
                     path: project_5,
                     linkProject: "https://eugenere95.github.io/dynamic_lp/",
                     linkGithub: "https://github.com/EugeneRe95/dynamic_lp",
-                    name: "Dynamic Landing Page"
+                    name: "Dynamic Landing Page",
+                    type: 'JavaScript'
                 },
                 {
                     path: project_6,
                     linkProject: "https://eugenere95.github.io/bookmarker/",
                     linkGithub: "https://github.com/EugeneRe95/bookmarker",
-                    name: "Bookmarker"
+                    name: "Bookmarker",
+                    type: 'JavaScript'
                 },
                 {
                     path: project_7,
                     linkProject: "https://eugenere95.github.io/todo_list-ciklum_task_internship/",
                     linkGithub: "https://github.com/EugeneRe95/todo_list-ciklum_task_internship",
-                    name: "Todo list"
+                    name: "Todo list",
+                    type: 'JavaScript'
                 },
                 {
                     path: project_8,
                     linkProject: "https://eugenere95.github.io/book_list/",
                     linkGithub: "https://github.com/EugeneRe95/book_list",
-                    name: "Book list"
+                    name: "Book list",
+                    type: 'JavaScript'
                 }
-            ]
+            ],
+            type: 'All'
         }
     }
-
+    filterProjects(e){
+        if(e.target.closest('button')){
+            document.querySelectorAll('.portfolio-buttons button').forEach(button=>{
+                button.classList.remove('active')
+            })
+            e.target.classList.add('active')
+            this.setState({type: e.target.value})
+        }
+    }
     render() {
         return (
             <AwesomeSlider cssModule={AwesomeSliderStyles} bullets={true} fillParent={true} organicArrows={true}>
@@ -103,11 +122,23 @@ export class MainSlider extends Component {
 
                 <div id="portfolio">
                     <h1 style={{ marginTop: "40px", fontSize: "40px", textShadow: "10px 10px 25px #000" }}>My Projects</h1>
+                    <div className="portfolio-buttons" onClick={this.filterProjects.bind(this)}>
+                        <button value="All" className="active">All</button>
+                        <button value="React">React</button>
+                        <button value="JavaScript">Javascript</button>
+                    </div>
                     <div className="portfolio-container">
-                        {
-                            this.state.items.map((item, index) => {
+                        {   (this.state.type==='All') ?
+                            (this.state.items.map((item, index) => {
                                 return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 300} />
-                            })
+                            })) : (this.state.type==='React') ? (this.state.items.map((item, index) => {
+                                if(item.type==='React'){
+                                return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 300} />}
+                            })) : (this.state.items.map((item, index) => {
+                                if(item.type==='JavaScript'){
+                                return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 300} />}
+                            }))
+
                         }</div>
                 </div>
             </AwesomeSlider>

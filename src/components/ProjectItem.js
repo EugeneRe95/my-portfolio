@@ -13,7 +13,7 @@ export class ProjectItem extends Component {
     }
     render() {
         return (
-            <div className={"portfolio-item animated fadeInUpBig"} style={{ background: `url(${this.props.path}) no-repeat center top /cover`, animationDelay: this.props.animDelay+'ms'}} onMouseOver={this.hoverBlock} onMouseOut={this.hoverBlock}>
+            <div className={"portfolio-item animated fadeInUpBig"} style={{ background: `url(${this.props.path}) no-repeat center top /cover`, animationDelay: this.props.animDelay+'ms'}} onMouseOver={this.hoverBlock} onMouseOut={this.hoverBlock} onTouchStart={this.hoverBlock}>
                 <div className="item-container" style={{ opacity: this.state.opacity, transform: this.state.transform, top: this.state.top, left: this.state.left, transition: 'all 800ms ease-in' }}>
                     <h2 style={{margin:'8px'}}>{this.props.name}</h2>
                     <div>
