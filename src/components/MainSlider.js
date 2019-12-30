@@ -99,16 +99,17 @@ export class MainSlider extends Component {
             type: 'All'
         }
     }
-    filterProjects(e){
-        if(e.target.closest('button')){
-            document.querySelectorAll('.portfolio-buttons button').forEach(button=>{
+    filterProjects(e) {
+        if (e.target.closest('button')) {
+            document.querySelectorAll('.portfolio-buttons button').forEach(button => {
                 button.classList.remove('active')
             })
             e.target.classList.add('active')
-            this.setState({type: e.target.value})
+            this.setState({ type: e.target.value })
         }
     }
     render() {
+        const buttons = ['All', 'React', 'JavaScript']
         return (
             <AwesomeSlider cssModule={AwesomeSliderStyles} bullets={true} fillParent={true} organicArrows={true}>
                 <div id="main"><MainParticles /><div className="heading"><h1 className="animated fadeInLeftBig">Eugene <span style={{ color: 'rgb(247, 111, 0)' }}>Revutskiy </span></h1><p>{position.split('').map((word, index) => {
@@ -123,21 +124,22 @@ export class MainSlider extends Component {
                 <div id="portfolio">
                     <h1 style={{ marginTop: "40px", fontSize: "40px", textShadow: "10px 10px 25px #000" }}>My Projects</h1>
                     <div className="portfolio-buttons" onClick={this.filterProjects.bind(this)}>
-                        <button value="All" className="active">All</button>
-                        <button value="React">React</button>
-                        <button value="JavaScript">Javascript</button>
+                        {buttons.map((item, index) =>{
+                           return (item===this.state.type) ? <button value={item} key={index} className="active">{item}</button> : <button value={item} key={index}>{item}</button>
+                        }
+                    )}
                     </div>
                     <div className="portfolio-container">
-                        {   (this.state.type==='All') ?
+                        {(this.state.type === 'All') ?
                             (this.state.items.map((item, index) => {
-                                return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 300} />
-                            })) : (this.state.type==='React') ? (this.state.items.map((item, index) => {
-                                if(item.type==='React'){
-                                return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 300} />}
-                            })) : (this.state.items.map((item, index) => {
-                                if(item.type==='JavaScript'){
-                                return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 300} />}
-                            }))
+                                return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 100} />
+                            })) : (this.state.type === 'React') ? this.state.items.filter(item =>
+                                item.type === 'React').map((item, index) => {
+                                    return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 100} />
+                                }) : this.state.items.filter(item =>
+                                    item.type === 'JavaScript').map((item, index) => {
+                                        return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 100} />
+                                    })
 
                         }</div>
                 </div>

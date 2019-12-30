@@ -15,7 +15,7 @@ body{
     display: flex;
 }
 #sidebar{
-    height: 100vh;
+    /* height: 100vh; */
     width: 70px;
     background-color: rgb(14, 15, 44);
     border-right: 2px solid rgb(247, 111, 0);
@@ -53,7 +53,7 @@ body{
   font-weight: 400;
 }
 #main-carousel{
-    height: 100vh;
+    /* height: 100vh; */
     width: calc(100vw - 70px);
     position: absolute;
     top: 0px;
@@ -111,7 +111,7 @@ a{
       position: absolute;
       top: 0;
       right: 2px;
-      height: 100vh;
+      /* height: 100vh; */
       width: 100%;
       display: flex;
       align-content: center;
@@ -360,9 +360,9 @@ a{
   }
   .portfolio-item .item-container{
     position: absolute;
-    top: 0;
+    top: -100%;
     opacity: 0;
-    left: 0;
+    left: 100%;
     background: rgba(0, 0, 0, 0.6);
     height: 100%;
     width: 100%;
@@ -370,6 +370,14 @@ a{
     flex-direction: column;
     justify-content: space-between;
     align-content: center;
+    transform: rotate(-90deg) scale(0.1);
+    transition: all 600ms ease-in;
+  }
+  .portfolio-item:hover .item-container{
+    top: 0;
+    left: 0;
+    opacity: 1;
+    transform: rotate(0deg) scale(1);
   }
   .portfolio-item .item-container p{
     width: 100%;

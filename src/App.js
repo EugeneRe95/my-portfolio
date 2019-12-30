@@ -14,9 +14,13 @@ export class App extends React.Component {
     super(props)
     this.toggleMenu = this.toggleMenu.bind(this)
     this.hideMenu = this.hideMenu.bind(this)
-    this.state = { shown: false, close: '', anim: '', zIndex: '-1', menuAnim: 'slideOutUp', menuOpacity: 0, animatedText: true }
+    this.state = { shown: false, close: '', anim: '', zIndex: '-1', menuAnim: 'slideOutUp', menuOpacity: 0, animatedText: true, height: window.innerHeight }
   }
-
+  componentDidMount(){
+    window.addEventListener('resize',()=>{
+      this.setState({height: window.innerHeight})
+    })
+  }
   toggleMenu() {
     if (this.state.shown) {
       this.setState({ shown: false, close: '', zIndex: '-1', menuAnim: 'slideOutUp', menuOpacity: 1, });
@@ -48,15 +52,15 @@ export class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div id="sidebar">
+        <div id="sidebar" style={{height: this.state.height}}>
           <Hamburger close={this.state.close} toggleMenu={this.toggleMenu} />
           <div id="contacts"><Contacts id="phone" icon="fas fa-phone-square-alt" text="+38(067)-465-59-56" /><Contacts id="mail" icon="fas fa-envelope-square" text="revytskiy.evgen@gmail.com" /><a href="https://drive.google.com/open?id=1fx18K7Jv-AvT3NChYhggxaT7Ya7evVbY" target="_blank" rel="noopener noreferrer"><Contacts id="cv" icon="fa fa-file" text="Click to open my CV" /></a></div>
           <div id="socialmedia-icons"><SocialmediaIcons /></div>
         </div>
-        <div id="main-carousel">
+        <div id="main-carousel" style={{height: this.state.height}}>
           <MainSlider />
         </div>
-        <div id="menu-mobile" style={{ zIndex: this.state.zIndex }}>
+        <div id="menu-mobile" style={{ zIndex: this.state.zIndex, height: this.state.height }}>
           <Menu hideMenu={this.hideMenu} menuAnim={this.state.menuAnim} opacity={this.state.menuOpacity} />
         </div>
       </React.Fragment>
