@@ -132,7 +132,6 @@ a{
     margin-bottom: 20px;
   }
   .menu-mobile-container button{
-    transition: all 500ms ease-out;
     background: none;
     color: #fff;
     font-size: 20px;
@@ -156,7 +155,7 @@ a{
     --organic-arrow-thickness: 6px;
   }
   .awssld__bullets{
-    bottom: 20px !important;
+    bottom: 17px !important;
     z-index: 20;
     display: none !important;
   }
@@ -224,9 +223,11 @@ a{
     width: 100%;
   }
   .about-me p{
-    background: rgb(0,0,0);
-    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, saddlebrown 0%, rgba(0,0,0,1) 100%, rgba(255,255,255,1) 100%);
+    /* background: rgb(0,0,0);
+    background: radial-gradient(circle, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 0%, saddlebrown 0%, rgba(0,0,0,1) 100%, rgba(255,255,255,1) 100%); */
+    background: saddlebrown;
     border-radius: 20px;
+    border: 3px double rgb(247, 111, 0);
     width: 70%;
     min-width: 250px;
     padding: 15px;
@@ -277,7 +278,6 @@ a{
     height: 120px;
     margin: 10px;
     box-shadow: 10px 10px 20px #000;
-    transition: all 300ms ease-in-out;
   }
   .skills-list-items p:hover{
     background: rgb(247, 111, 0);
@@ -324,6 +324,7 @@ a{
     align-content: center;
     justify-items: center;
     margin-top: 40px;
+    padding-bottom: 45px;
   }
   .portfolio-buttons{
     margin-top: 40px;
@@ -379,7 +380,7 @@ a{
     opacity: 1;
     transform: rotate(0deg) scale(1);
   }
-  .portfolio-item .item-container p{
+  .project-link{
     width: 100%;
     text-align: center;
     background: rgba(0, 0, 0, 0.8);
@@ -388,11 +389,14 @@ a{
     border-radius: 8px;
     font-size: 18px;
   }
+  .technologies{
+    margin: 5px;
+  }
   .portfolio-item .item-container a{
     display: inline-block;
     width: 100%;
   }
-  .portfolio-item .item-container p:hover{
+  .project-link:hover{
     background-color: rgb(161, 161, 161);
   }
   #socialmedia-icons{

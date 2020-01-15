@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 let skillsList = ["HTML5", "CSS3", "SASS/SCSS", "Responsive and adaptive layout", "JavaScript, ES5/ES6, DOM", "AJAX, Fetch API", "Git, Github", "NPM", "React js, JSX", "Redux", "Webpack", "Babel"];
-let description = `Hi, my name is Eugene and my main goal for now is to become Front-end developer. One year ago I quit my previous job, which was not related to IT, due to the fact - I didn't really like it. So I started searching for a job I would become passionated about and would love not to look for anything else for a long time, as in my opinion, it's the main key to succeed. I really struggled in searching and have tried a lot of areas but something with my feelings was always wrong... till I found out about Front-end. My journey began...`
+let description = `Hi, my name is Eugene and I'm currently searching for opportunities to start my career as Front-end developer. I believe that being truly passionate about your job is the main key to succeed. In my opinion, real projects, teamwork, knowledge I can gain from others are inalienable to achieve my goal of becoming pro in what I really love. `
 export class Skills extends Component {
     render() {
         return (

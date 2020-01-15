@@ -30,70 +30,80 @@ export class MainSlider extends Component {
                     linkProject: "https://eugenere95.github.io/trumba-trans/",
                     linkGithub: "https://github.com/EugeneRe95/trumba-trans",
                     name: "Logistic website",
-                    type: 'React'
+                    type: 'React js',
+                    technologies: 'HTML5, CSS3, JavaScript, React, animate.css, wow.js, material-ui'
                 },
                 {
                     path: project_10,
                     linkProject: "https://eugenere95.github.io/lerestaurante/",
                     linkGithub: "https://github.com/EugeneRe95/lerestaurante",
                     name: "Restaurant website",
-                    type: 'React'
+                    type: 'React js',
+                    technologies: 'HTML5, CSS3, JavaScript, React, React Routing, animate.css, material-ui'
                 },
                 {
                     path: project_1,
                     linkProject: "https://eugenere95.github.io/weight_converter/",
                     linkGithub: "https://github.com/EugeneRe95/weight_converter",
                     name: "Weight converter",
-                    type: 'JavaScript'
+                    type: 'JavaScript',
+                    technologies: 'HTML5, CSS3, Bootstrap, JavaScript'
                 },
                 {
                     path: project_2,
                     linkProject: "https://eugenere95.github.io/rps_game/",
                     linkGithub: "https://github.com/EugeneRe95/rps_game",
                     name: "Rock Paper Scissors Game",
-                    type: 'JavaScript'
+                    type: 'JavaScript',
+                    technologies: 'HTML5, CSS3, JavaScript'
                 },
                 {
                     path: project_3,
                     linkProject: "https://eugenere95.github.io/fullscreen_slider/",
                     linkGithub: "https://github.com/EugeneRe95/fullscreen_slider",
                     name: "Fullscreen Slider",
-                    type: 'JavaScript'
+                    type: 'JavaScript',
+                    technologies: 'HTML5, CSS3, JavaScript'
                 },
                 {
                     path: project_4,
                     linkProject: "https://eugenere95.github.io/fancy_form/",
                     linkGithub: "https://github.com/EugeneRe95/fancy_form",
                     name: "Fancy Form",
-                    type: 'JavaScript'
+                    type: 'JavaScript',
+                    technologies: 'HTML5, CSS3, JavaScript'
                 },
                 {
                     path: project_5,
                     linkProject: "https://eugenere95.github.io/dynamic_lp/",
                     linkGithub: "https://github.com/EugeneRe95/dynamic_lp",
                     name: "Dynamic Landing Page",
-                    type: 'JavaScript'
+                    type: 'JavaScript',
+                    technologies: 'HTML5, CSS3, JavaScript, Local Storage'
                 },
                 {
                     path: project_6,
                     linkProject: "https://eugenere95.github.io/bookmarker/",
                     linkGithub: "https://github.com/EugeneRe95/bookmarker",
                     name: "Bookmarker",
-                    type: 'JavaScript'
+                    type: 'JavaScript',
+                    technologies: 'HTML5, CSS3, Bootstrap, JavaScript, Local Storage'
                 },
                 {
                     path: project_7,
                     linkProject: "https://eugenere95.github.io/todo_list-ciklum_task_internship/",
                     linkGithub: "https://github.com/EugeneRe95/todo_list-ciklum_task_internship",
                     name: "Todo list",
-                    type: 'JavaScript'
+                    type: 'JavaScript',
+                    technologies: 'HTML5, CSS3, JavaScript, Local Storage'
                 },
                 {
                     path: project_8,
                     linkProject: "https://eugenere95.github.io/book_list/",
                     linkGithub: "https://github.com/EugeneRe95/book_list",
                     name: "Book list",
-                    type: 'JavaScript'
+                    type: 'JavaScript',
+                    technologies: 'HTML5, CSS3, JavaScript, Local Storage'
                 }
             ],
             type: 'All'
@@ -109,7 +119,7 @@ export class MainSlider extends Component {
         }
     }
     render() {
-        const buttons = ['All', 'React', 'JavaScript']
+        const buttons = ['All', 'React js', 'JavaScript']
         return (
             <AwesomeSlider cssModule={AwesomeSliderStyles} bullets={true} fillParent={true} organicArrows={true}>
                 <div id="main"><MainParticles /><div className="heading"><h1 className="animated fadeInLeftBig">Eugene <span style={{ color: 'rgb(247, 111, 0)' }}>Revutskiy </span></h1><p>{position.split('').map((word, index) => {
@@ -132,13 +142,13 @@ export class MainSlider extends Component {
                     <div className="portfolio-container">
                         {(this.state.type === 'All') ?
                             (this.state.items.map((item, index) => {
-                                return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 100} />
-                            })) : (this.state.type === 'React') ? this.state.items.filter(item =>
-                                item.type === 'React').map((item, index) => {
-                                    return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 100} />
+                                return <ProjectItem path={item.path} key={index} techs={item.technologies} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 100} />
+                            })) : (this.state.type === 'React js') ? this.state.items.filter(item =>
+                                item.type === 'React js').map((item, index) => {
+                                    return <ProjectItem path={item.path} key={index} techs={item.technologies} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 100} />
                                 }) : this.state.items.filter(item =>
                                     item.type === 'JavaScript').map((item, index) => {
-                                        return <ProjectItem path={item.path} key={index} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 100} />
+                                        return <ProjectItem path={item.path} key={index} techs={item.technologies} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 100} />
                                     })
 
                         }</div>
