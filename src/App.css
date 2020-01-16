@@ -397,7 +397,7 @@ a{
     width: 100%;
   }
   .project-link:hover{
-    background-color: rgb(161, 161, 161);
+    background-color: rgb(134, 134, 134);
   }
   #socialmedia-icons{
     padding: 20px;
@@ -487,7 +487,12 @@ a{
   }
   .portfolio-item{
     width: 250px;
-    height: 170px;
+  }
+  .portfolio-item .item-container h2{
+    font-size: 18px;
+  }
+  .technologies{
+    font-size: 16px;
   }
 }
 /* Media for skills section */
