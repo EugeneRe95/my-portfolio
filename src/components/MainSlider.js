@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import AwesomeSlider from 'react-awesome-slider';
 // import AwesomeSliderStyles from 'react-awesome-slider/src/styled/fall-animation';
-import AwesomeSliderStyles from 'react-awesome-slider/src/styled/cube-animation';
-// import AwesomeSliderStyles from 'react-awesome-slider/src/styled/fold-out-animation';
+import AwesomeSliderStyles from 'react-awesome-slider/src/styled/scale-out-animation';
+import FlipMove from 'react-flip-move';
+
 import ParicilesSkills from './ParicilesSkills';
 import Skills from './Skills';
 import MainParticles from "./MainParticles";
@@ -115,17 +116,28 @@ export class MainSlider extends Component {
                     technologies: 'HTML5, CSS3, JavaScript, Local Storage'
                 }
             ],
+            filteredItems:[],
             type: 'All'
         }
     }
-    filterProjects(e) { 
+    filterProjects(e) {
+        let items= this.state.items;
         if (e.target.closest('button')) {
             document.querySelectorAll('.portfolio-buttons button').forEach(button => {
                 button.classList.remove('active')
             })
             e.target.classList.add('active')
-            this.setState({ type: e.target.value })
+            this.setState({ type: e.target.value },()=>{
+                if(this.state.type==='All'){
+                    this.setState({filteredItems: items})
+                }else{
+                    this.setState({filteredItems: items.filter(item=> item.type===this.state.type)})
+                }
+            })
         }
+    }
+    componentDidMount(){
+        this.setState({filteredItems: this.state.items})
     }
     render() {
         const buttons = ['All', 'React js', 'JavaScript']
@@ -143,24 +155,16 @@ export class MainSlider extends Component {
                 <div id="portfolio">
                     <h1 style={{ marginTop: "40px", fontSize: "40px", textShadow: "10px 10px 25px #000" }}>My Projects</h1>
                     <div className="portfolio-buttons" onClick={this.filterProjects.bind(this)}>
-                        {buttons.map((item, index) =>{
-                           return (item===this.state.type) ? <button value={item} key={index} className="active">{item}</button> : <button value={item} key={index}>{item}</button>
+                        {buttons.map((item, index) => {
+                            return (item === this.state.type) ? <button value={item} key={index} className="active">{item}</button> : <button value={item} key={index}>{item}</button>
                         }
-                    )}
+                        )}
                     </div>
-                    <div className="portfolio-container">
-                        {(this.state.type === 'All') ?
-                            (this.state.items.map((item, index) => {
-                                return <ProjectItem path={item.path} key={index} techs={item.technologies} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 100} />
-                            })) : (this.state.type === 'React js') ? this.state.items.filter(item =>
-                                item.type === 'React js').map((item, index) => {
-                                    return <ProjectItem path={item.path} key={index} techs={item.technologies} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 100} />
-                                }) : this.state.items.filter(item =>
-                                    item.type === 'JavaScript').map((item, index) => {
-                                        return <ProjectItem path={item.path} key={index} techs={item.technologies} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} animDelay={index * 100} />
-                                    })
-
-                        }</div>
+                        <FlipMove enterAnimation="elevator" appearAnimation="elevator" leaveAnimation="elevator" duration={800} delay={200} staggerDelayBy={100} className="portfolio-container">
+                            {this.state.filteredItems.map((item,index)=>{
+                                return <ProjectItem path={item.path} key={index} techs={item.technologies} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name}/>
+                            })}
+                        </FlipMove>
                 </div>
             </AwesomeSlider>
 
