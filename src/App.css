@@ -209,6 +209,9 @@ a{
     align-content: center;
   }
   .about-container{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
     width: 75%;
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -262,6 +265,12 @@ a{
     grid-template-columns: repeat(4,1fr);
     justify-items: center;
     align-items: start;
+  }
+  .skills-list-items table{
+    border-collapse: collapse;
+  }
+  .skills-list-items td{
+    border: 1px solid #000;
   }
   .skills-list-items p{
     border: 3px double rgb(247, 111, 0);

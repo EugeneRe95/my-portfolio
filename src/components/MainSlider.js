@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import AwesomeSlider from 'react-awesome-slider';
-import AwesomeSliderStyles from 'react-awesome-slider/src/styled/fall-animation';
-// import AwesomeSliderStyles from 'react-awesome-slider/src/styled/cube-animation';
+// import AwesomeSliderStyles from 'react-awesome-slider/src/styled/fall-animation';
+import AwesomeSliderStyles from 'react-awesome-slider/src/styled/cube-animation';
 // import AwesomeSliderStyles from 'react-awesome-slider/src/styled/fold-out-animation';
 import ParicilesSkills from './ParicilesSkills';
 import Skills from './Skills';
@@ -17,6 +17,7 @@ import project_7 from '../img/project_7.PNG';
 import project_8 from '../img/project_8.PNG';
 import project_9 from '../img/project_9.PNG';
 import project_10 from '../img/project_10.PNG';
+import project_11 from '../img/project_11.PNG';
 
 let position = 'Junior Front-end developer';
 
@@ -40,6 +41,14 @@ export class MainSlider extends Component {
                     name: "Restaurant website",
                     type: 'React js',
                     technologies: 'HTML5, CSS3, JavaScript, React, React Routing, animate.css, material-ui'
+                },
+                {
+                    path: project_11,
+                    linkProject: "https://eugenere95.github.io/functional-table/",
+                    linkGithub: "https://github.com/EugeneRe95/functional-table",
+                    name: "Functional table",
+                    type: 'React js',
+                    technologies: 'HTML5, SCSS, JavaScript, React, React Routing, material-ui'
                 },
                 {
                     path: project_1,
@@ -109,7 +118,7 @@ export class MainSlider extends Component {
             type: 'All'
         }
     }
-    filterProjects(e) {
+    filterProjects(e) { 
         if (e.target.closest('button')) {
             document.querySelectorAll('.portfolio-buttons button').forEach(button => {
                 button.classList.remove('active')
@@ -121,7 +130,7 @@ export class MainSlider extends Component {
     render() {
         const buttons = ['All', 'React js', 'JavaScript']
         return (
-            <AwesomeSlider cssModule={AwesomeSliderStyles} bullets={true} fillParent={true} organicArrows={true}>
+            <AwesomeSlider cssModule={AwesomeSliderStyles} bullets={true} fillParent={true} organicArrows={true} >
                 <div id="main"><MainParticles /><div className="heading"><h1 className="animated fadeInLeftBig">Eugene <span style={{ color: 'rgb(247, 111, 0)' }}>Revutskiy </span></h1><p>{position.split('').map((word, index) => {
                     if (word === ' ') {
                         return <span key={index} className="animated rollIn" style={{ animationDelay: index * 60 + 'ms' }}>&nbsp;</span>

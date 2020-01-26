@@ -14,9 +14,9 @@ export class Skills extends Component {
                         <div className="skills-list-items">
                             <h1>My Skills</h1>
                             <div className="skills-list-items-container">
-                            {skillsList.map((item, index) => {
-                                return <p key={index} style={{ animationDelay: index * 300 + 'ms' }} className="animated fadeInUp"><span>{item}</span></p>
-                            })}
+                                {skillsList.map((item, index) => {
+                                    return <p key={index} style={{ animationDelay: index * 300 + 'ms' }} className="animated fadeInUp"><span>{item}</span></p>
+                                })}
                             </div>
                         </div>
                     </div>
