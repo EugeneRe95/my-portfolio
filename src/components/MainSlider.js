@@ -150,7 +150,12 @@ export class MainSlider extends Component {
                         return <span key={index} className="animated rollIn" style={{ animationDelay: index * 60 + 'ms' }}>{word}</span>
                     }
                 })}</p></div></div>
-                <div id="skills">{(window.innerWidth > 800) ? <React.Fragment><ParicilesSkills /><Skills /></React.Fragment> : <Skills />}</div>
+                <div id="skills">{(window.innerWidth > 800) ? <React.Fragment><ParicilesSkills /><Skills /></React.Fragment> : <Skills users={[
+                    // {firstName:'John'},
+                    // {firstName:'kody'},
+                    // {firstName:'eugene'},
+                    // {firstName:'alex'}
+                    ]}/>}</div>
 
                 <div id="portfolio">
                     <h1 style={{ marginTop: "40px", fontSize: "40px", textShadow: "10px 10px 25px #000" }}>My Projects</h1>

@@ -9,6 +9,10 @@ export class MainParticles extends Component {
     componentDidMount(){
         let widthWindow=window.innerWidth;
         this.setState({number: widthWindow/10});
+        window.addEventListener('resize', ()=>{
+            let width=window.innerWidth;
+            this.setState({number: width/10});
+        })
     }
     render() {
         return (

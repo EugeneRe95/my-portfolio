@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 let skillsList = ["HTML5", "CSS3", "SASS/SCSS", "Responsive and adaptive layout", "JavaScript, ES5/ES6, DOM", "AJAX, Fetch API", "Git, Github", "NPM", "React js, JSX", "Redux", "Webpack", "Babel"];
 let description = `Hi, my name is Eugene and I'm currently searching for opportunities to start my career as Front-end developer. I believe that being truly passionate about your job is the main key to succeed. In my opinion, real projects, teamwork, knowledge I can gain from others are inalienable to achieve my goal of becoming pro in what I really love. `
 export class Skills extends Component {
+
     render() {
         return (
             <React.Fragment>
