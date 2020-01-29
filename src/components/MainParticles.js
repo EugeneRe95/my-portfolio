@@ -22,10 +22,13 @@ export class MainParticles extends Component {
                         "value": this.state.number
                     },
                     "size": {
-                        "value": 3
+                        "value": 4
                     },
                     "color":{
                         "value": "#f76f00"
+                    },
+                    "move":{
+                        "speed": 6
                     }
                 },
                 "interactivity": {
@@ -33,6 +36,10 @@ export class MainParticles extends Component {
                         "onhover": {
                             "enable": true,
                             "mode": "repulse"
+                        },
+                        "onclick": {
+                            "enable": true,
+                            "mode": "push"
                         }
                     }
                 }
