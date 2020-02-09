@@ -4,14 +4,24 @@ import Particles from 'react-particles-js';
 export class MainParticles extends Component {
     constructor(props){
         super(props)
-        this.state={number: ''}
+        this.state={number: '', push: true}
     }
     componentDidMount(){
         let widthWindow=window.innerWidth;
-        this.setState({number: widthWindow/10});
+        this.setState({number: widthWindow/10},()=>{
+            if(widthWindow<500){
+                this.setState({push: false})
+            }
+        });
         window.addEventListener('resize', ()=>{
             let width=window.innerWidth;
-            this.setState({number: width/10});
+            this.setState({number: width/10},()=>{
+                if(width<500){
+                    this.setState({push: false})
+                }else{
+                    this.setState({push: true})
+                }
+            });
         })
     }
     render() {
@@ -38,7 +48,7 @@ export class MainParticles extends Component {
                             "mode": "repulse"
                         },
                         "onclick": {
-                            "enable": true,
+                            "enable": this.state.push,
                             "mode": "push"
                         }
                     }

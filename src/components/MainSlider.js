@@ -19,6 +19,8 @@ import project_8 from '../img/project_8.PNG';
 import project_9 from '../img/project_9.PNG';
 import project_10 from '../img/project_10.PNG';
 import project_11 from '../img/project_11.PNG';
+import project_12 from '../img/project_12.PNG';
+import project_13 from '../img/project_13.PNG';
 
 let position = 'Junior Front-end developer';
 
@@ -50,6 +52,22 @@ export class MainSlider extends Component {
                     name: "Functional table",
                     type: 'React js',
                     technologies: 'HTML5, SCSS, JavaScript, React, React Routing, material-ui'
+                },
+                {
+                    path: project_12,
+                    linkProject: "https://eugenere95.github.io/star_wars_api/",
+                    linkGithub: "https://github.com/EugeneRe95/star_wars_api",
+                    name: "Star wars API",
+                    type: 'React js',
+                    technologies: 'HTML5, SCSS, JavaScript, React, material-ui'
+                },
+                {
+                    path: project_13,
+                    linkProject: "https://eugenere95.github.io/game_in_dots/",
+                    linkGithub: "https://github.com/EugeneRe95/game_in_dots",
+                    name: "Game in dots",
+                    type: 'React js',
+                    technologies: 'HTML5, SCSS, JavaScript, React, material-ui'
                 },
                 {
                     path: project_1,
@@ -151,10 +169,6 @@ export class MainSlider extends Component {
                     }
                 })}</p></div></div>
                 <div id="skills">{(window.innerWidth > 800) ? <React.Fragment><ParicilesSkills /><Skills /></React.Fragment> : <Skills users={[
-                    // {firstName:'John'},
-                    // {firstName:'kody'},
-                    // {firstName:'eugene'},
-                    // {firstName:'alex'}
                     ]}/>}</div>
 
                 <div id="portfolio">
