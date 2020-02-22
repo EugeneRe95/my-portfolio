@@ -180,8 +180,8 @@ export class MainSlider extends Component {
                         )}
                     </div>
                         <FlipMove enterAnimation="elevator" appearAnimation="elevator" leaveAnimation="elevator" duration={800} delay={200} staggerDelayBy={100} className="portfolio-container">
-                            {this.state.filteredItems.map((item,index)=>{
-                                return <ProjectItem path={item.path} key={index} techs={item.technologies} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name}/>
+                            {this.state.filteredItems.map((item)=>{
+                                return <ProjectItem path={item.path} key={item.name} techs={item.technologies} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name}/>
                             })}
                         </FlipMove>
                 </div>
