@@ -21,6 +21,7 @@ import project_10 from '../img/project_10.PNG';
 import project_11 from '../img/project_11.PNG';
 import project_12 from '../img/project_12.PNG';
 import project_13 from '../img/project_13.PNG';
+import project_14 from '../img/project_14.PNG';
 
 let position = 'Junior Front-end developer';
 
@@ -68,6 +69,14 @@ export class MainSlider extends Component {
                     name: "Game in dots",
                     type: 'React js',
                     technologies: 'HTML5, SCSS, JavaScript, React, material-ui'
+                },
+                {
+                    path: project_14,
+                    linkProject: "https://eugenere95.github.io/trackers_list/",
+                    linkGithub: "https://github.com/EugeneRe95/trackers_list",
+                    name: "Trackers_list",
+                    type: 'React js',
+                    technologies: 'CSS3, JavaScript, React, material-ui, localStorage, moment js'
                 },
                 {
                     path: project_1,
