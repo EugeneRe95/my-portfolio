@@ -144,42 +144,47 @@ export class MainSlider extends Component {
                     technologies: 'HTML5, CSS3, JavaScript, Local Storage'
                 }
             ],
-            filteredItems:[],
+            filteredItems: [],
             type: 'All'
         }
     }
     filterProjects(e) {
-        let items= this.state.items;
+        let items = this.state.items;
         if (e.target.closest('button')) {
             document.querySelectorAll('.portfolio-buttons button').forEach(button => {
                 button.classList.remove('active')
             })
             e.target.classList.add('active')
-            this.setState({ type: e.target.value },()=>{
-                if(this.state.type==='All'){
-                    this.setState({filteredItems: items})
-                }else{
-                    this.setState({filteredItems: items.filter(item=> item.type===this.state.type)})
+            this.setState({ type: e.target.value }, () => {
+                if (this.state.type === 'All') {
+                    this.setState({ filteredItems: items })
+                } else {
+                    this.setState({ filteredItems: items.filter(item => item.type === this.state.type) })
                 }
             })
         }
     }
-    componentDidMount(){
-        this.setState({filteredItems: this.state.items})
+    componentDidMount() {
+        this.setState({ filteredItems: this.state.items })
     }
     render() {
         const buttons = ['All', 'React js', 'JavaScript']
         return (
             <AwesomeSlider cssModule={AwesomeSliderStyles} bullets={true} fillParent={true} organicArrows={true} mobileTouch={false} >
-                <div id="main"><MainParticles /><div className="heading"><h1 className="animated fadeInLeftBig">Eugene <span style={{ color: 'rgb(247, 111, 0)' }}>Revutskiy </span></h1><p>{position.split('').map((word, index) => {
-                    if (word === ' ') {
-                        return <span key={index} className="animated rollIn" style={{ animationDelay: index * 60 + 'ms' }}>&nbsp;</span>
-                    } else {
-                        return <span key={index} className="animated rollIn" style={{ animationDelay: index * 60 + 'ms' }}>{word}</span>
-                    }
-                })}</p></div>
+                <div id="main">
+                    <MainParticles />
+                    <div className="heading"><h1 className="animated fadeInLeftBig">Eugene <span style={{ color: 'rgb(247, 111, 0)' }}>Revutskiy </span></h1>
+                        <p>{position.split('').map((word, index) => {
+                            if (word === ' ') {
+                                return <span key={index} className="animated rollIn" style={{ animationDelay: index * 60 + 'ms' }}>&nbsp;</span>
+                            } else {
+                                return <span key={index} className="animated rollIn" style={{ animationDelay: index * 60 + 'ms' }}>{word}</span>
+                            }
+                        })}
+                        </p>
+                    </div>
                 </div>
-                <div id="skills"><Skills users={[]}/></div>
+                <div id="skills"><Skills users={[]} /></div>
                 <div id="portfolio">
                     <h1 style={{ marginTop: "40px", fontSize: "40px", textShadow: "10px 10px 25px #000" }}>My Projects</h1>
                     <div className="portfolio-buttons" onClick={this.filterProjects.bind(this)}>
@@ -188,11 +193,11 @@ export class MainSlider extends Component {
                         }
                         )}
                     </div>
-                        <FlipMove enterAnimation="elevator" appearAnimation="elevator" leaveAnimation="elevator" duration={800} delay={200} staggerDelayBy={100} className="portfolio-container">
-                            {this.state.filteredItems.map((item)=>{
-                                return <ProjectItem path={item.path} key={item.name} techs={item.technologies} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name}/>
-                            })}
-                        </FlipMove>
+                    <FlipMove enterAnimation="elevator" appearAnimation="elevator" leaveAnimation="elevator" duration={800} delay={200} staggerDelayBy={100} className="portfolio-container">
+                        {this.state.filteredItems.map((item) => {
+                            return <ProjectItem path={item.path} key={item.name} techs={item.technologies} linkProject={item.linkProject} linkGithub={item.linkGithub} name={item.name} />
+                        })}
+                    </FlipMove>
                 </div>
             </AwesomeSlider>
 
