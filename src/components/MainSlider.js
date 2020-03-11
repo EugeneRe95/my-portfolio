@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
-import AwesomeSlider from 'react-awesome-slider';
-// import AwesomeSliderStyles from 'react-awesome-slider/src/styled/fall-animation';
-import AwesomeSliderStyles from 'react-awesome-slider/src/styled/open-animation';
-import FlipMove from 'react-flip-move';
 
+import AwesomeSlider from 'react-awesome-slider';
+import AwesomeSliderStyles from 'react-awesome-slider/src/styled/open-animation';
+
+import FlipMove from 'react-flip-move';
 import Skills from './Skills';
 import MainParticles from "./MainParticles";
 import ProjectItem from './ProjectItem';
+
 import project_1 from '../img/project_1.PNG';
 import project_2 from '../img/project_2.PNG';
 import project_3 from '../img/project_3.PNG';
