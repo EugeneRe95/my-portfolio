@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import AwesomeSlider from 'react-awesome-slider';
 // import AwesomeSliderStyles from 'react-awesome-slider/src/styled/fall-animation';
-import AwesomeSliderStyles from 'react-awesome-slider/src/styled/scale-out-animation';
+import AwesomeSliderStyles from 'react-awesome-slider/src/styled/open-animation';
 import FlipMove from 'react-flip-move';
 
-import ParicilesSkills from './ParicilesSkills';
 import Skills from './Skills';
 import MainParticles from "./MainParticles";
 import ProjectItem from './ProjectItem';
@@ -22,6 +21,7 @@ import project_11 from '../img/project_11.PNG';
 import project_12 from '../img/project_12.PNG';
 import project_13 from '../img/project_13.PNG';
 import project_14 from '../img/project_14.PNG';
+
 
 let position = 'Junior Front-end developer';
 
@@ -169,17 +169,16 @@ export class MainSlider extends Component {
     render() {
         const buttons = ['All', 'React js', 'JavaScript']
         return (
-            <AwesomeSlider cssModule={AwesomeSliderStyles} bullets={true} fillParent={true} organicArrows={true} >
+            <AwesomeSlider cssModule={AwesomeSliderStyles} bullets={true} fillParent={true} organicArrows={true} mobileTouch={false} >
                 <div id="main"><MainParticles /><div className="heading"><h1 className="animated fadeInLeftBig">Eugene <span style={{ color: 'rgb(247, 111, 0)' }}>Revutskiy </span></h1><p>{position.split('').map((word, index) => {
                     if (word === ' ') {
                         return <span key={index} className="animated rollIn" style={{ animationDelay: index * 60 + 'ms' }}>&nbsp;</span>
                     } else {
                         return <span key={index} className="animated rollIn" style={{ animationDelay: index * 60 + 'ms' }}>{word}</span>
                     }
-                })}</p></div></div>
-                <div id="skills">{(window.innerWidth > 800) ? <React.Fragment><ParicilesSkills /><Skills /></React.Fragment> : <Skills users={[
-                    ]}/>}</div>
-
+                })}</p></div>
+                </div>
+                <div id="skills"><Skills users={[]}/></div>
                 <div id="portfolio">
                     <h1 style={{ marginTop: "40px", fontSize: "40px", textShadow: "10px 10px 25px #000" }}>My Projects</h1>
                     <div className="portfolio-buttons" onClick={this.filterProjects.bind(this)}>

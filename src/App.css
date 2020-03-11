@@ -52,7 +52,6 @@ body{
   font-weight: 400;
 }
 #main-carousel{
-    /* height: 100vh; */
     width: calc(100vw - 70px);
     position: absolute;
     top: 0px;
@@ -162,12 +161,13 @@ a{
   }
 
   #main{
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(1,156,187,1) 100%);
+    background: rgb(19, 143, 168);
+    background: url('./img/bg1.svg') no-repeat center right /cover;
     color: #fff;
     justify-content: flex-start;
     padding: 10%;
     text-shadow: 10px 10px 50px rgb(14, 15, 44);
+    position: relative;
   }
   #main h1{
     font-size: 60px;
@@ -179,17 +179,18 @@ a{
     display: inline-block;
   }
   #skills{
-    background: rgb(0,0,0);
-    background: linear-gradient(0deg, rgba(0,0,0,1) 4%, rgba(49,1,61,1) 50%, rgba(0,0,0,1) 97%);
-    overflow-y: scroll;
+    background: #faf0be;
+    overflow-y: auto;
+    position: relative;
+    background: url('./img/bg2.svg') no-repeat center center /cover;
   }
   #skills>div:first-child{
     height: 100%;
     width: 100%;
   }
-  #skills .skills-animated-bg{
-    width: 100%;
+  #skills-container{
     height: 100%;
+    width: 100%;
   }
   .about{
     position: absolute;
@@ -211,6 +212,7 @@ a{
     margin-bottom: 20px;
     border-radius: 10px;
     width: 75%;
+    max-width: 1600px;
     display: grid;
     grid-template-columns: 1fr 1fr;
     justify-items: center;
@@ -224,13 +226,15 @@ a{
     width: 100%;
   }
   .about-me p{
-    background: rgba(139,69,19, 0.9);
+    background: #654321;
     border-radius: 20px;
     width: 85%;
+    max-width: 550px;
     min-width: 250px;
     padding: 15px;
     box-shadow: 10px 10px 40px #000;
     color: #fff;
+    text-align: center;
   }
   .about-me p span{
     display: inline-block;
@@ -240,7 +244,7 @@ a{
     width: 200px;
     height: 200px;
     margin-bottom: 15px;
-    border: 3px double rgb(247, 111, 0);
+    border: 3px double #654321;
     border-radius: 50%;
     background: url('./img/me.jpg') no-repeat center center /cover;
   }
@@ -249,8 +253,8 @@ a{
   }
   .skills-list-items h1{
     text-align: center;
-    color: #fff;
-    text-shadow: 15px 15px 20px rgb(247, 111, 0);
+    color: #654321;
+    text-shadow: 15px 15px 20px #654321;
     margin-bottom: 15px;
     font-size: 40px;
     font-family: 'Tomorrow', sans-serif;
@@ -268,11 +272,11 @@ a{
     border: 1px solid #000;
   }
   .skills-list-items p{
-    border: 3px double rgb(247, 111, 0);
+    border: 3px double saddlebrown;
     text-align: center;
     color: #fff;
     font-size: 16px;
-    background: saddlebrown;
+    background: #654321;
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -284,7 +288,7 @@ a{
     box-shadow: 10px 10px 20px #000;
   }
   .skills-list-items p:hover{
-    background: rgb(247, 111, 0);
+    background: #945d25;
   }
   .skills-list-items p span{
     display: block;
@@ -292,12 +296,10 @@ a{
   
   #portfolio{
     background-color: transparent;
-    overflow-y: scroll;
+    overflow-y: auto;
     position: relative;
-    /* background: rgb(255,211,78);
-    background: linear-gradient(0deg, rgba(255,211,78,1) 3%, rgba(223,166,0,1) 65%); */
-    background: linear-gradient(-45deg, rgba(255,211,78,1) 3%, rgba(223,166,0,1) 65%, rgb(247, 161, 0) 100%);
-    animation: gradientBG 8s ease infinite;
+    background: linear-gradient(-45deg, rgb(245, 196, 48) 3%, rgb(255, 201, 39) 65%, rgb(255, 166, 0) 100%);
+    animation: gradientBG 6s ease infinite;
     background-size: 300% 300%;
   }
   @keyframes gradientBG {
@@ -341,13 +343,11 @@ a{
     padding: 8px;
     background-color: rgb(233, 216, 184);
     margin: 10px;
-    border-radius: 8px;
+    border: 4px solid #000;
     cursor: pointer;
-    box-shadow: 10px 10px 30px #000;
   }
   .portfolio-buttons button:hover{
-    background-color: #000;
-    color: #fff;
+    box-shadow: inset 0px 0px 5px #000;
   }
   .portfolio-buttons button.active{
     background-color: #000;
@@ -360,7 +360,6 @@ a{
     overflow: hidden;
     border: 4px solid #000;
     color: #fff;
-    border-radius: 8px;
     box-shadow: 10px 10px 40px #000;
   }
   .portfolio-item .item-container{
@@ -376,7 +375,7 @@ a{
     justify-content: space-between;
     align-content: center;
     transform: rotate(-90deg) scale(0.1);
-    transition: all 600ms ease-in;
+    transition: all 400ms linear;
   }
   .portfolio-item:hover .item-container{
     top: 0;
@@ -390,7 +389,6 @@ a{
     background: rgba(0, 0, 0, 0.8);
     border: 1px solid rgb(247, 111, 0);
     padding: 5px;
-    border-radius: 8px;
     font-size: 18px;
   }
   .technologies{

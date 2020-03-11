@@ -11,7 +11,8 @@
     "react-flip-move": "^3.0.4",
     "react-particles-js": "^2.7.0",
     "react-portal-tooltip": "^2.4.7",
-    "react-scripts": "3.2.0"
+    "react-scripts": "3.2.0",
+    "trianglify": "^2.0.0"
   },
   "scripts": {
     "start": "react-scripts start",
