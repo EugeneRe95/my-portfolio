@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "http://eugenere95.github.io/my-portfolio",
   "dependencies": {
-    "node-sass": "^4.13.0",
+    "node-sass": "^7.0.0",
     "react": "^16.12.0",
     "react-awesome-slider": "^2.4.0",
     "react-dom": "^16.12.0",
